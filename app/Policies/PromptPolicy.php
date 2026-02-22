@@ -45,8 +45,6 @@ class PromptPolicy
 
     public function daldkjbaskjdba(User $user): bool
     {
-        dd('here');
-
         return $user->role === 'admin';
     }
 
