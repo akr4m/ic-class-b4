@@ -11,6 +11,22 @@
                 <div class="p-6 text-gray-900">
                     {{ __("You're logged in!") }}
                 </div>
+                <div>
+                    User Information:
+                    <ul>
+                        <li>Name: {{ Auth::user()->name }}</li>
+                        <li>Email: {{ Auth::user()->email }}</li>
+                        <li>Role: <string class="font-bold">{{ Auth::user()->role }}</string>
+                        </li>
+                    </ul>
+                </div>
+                @can('access-admin-panel')
+                <div>
+                    <a href="{{ route('admin') }}" class="text-blue-500 hover:underline">
+                        {{ __('Go to Admin Dashboard') }}
+                    </a>
+                </div>
+                @endcan
             </div>
         </div>
     </div>
