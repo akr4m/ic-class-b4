@@ -14,13 +14,13 @@ class CheckRole
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next): Response
+    public function handle(Request $request, Closure $next, string $role): Response
     {
         $user = Auth::user();
-        if ($user && $user->role == 'admin') {
+        if ($user && $user->role == $role) {
             return $next($request);
         }
 
-        abort(403, 'Unauthorized. You are not authorized to access this resource using '.$user->email);
+        abort(403, 'Unauthorized access. Because you are not '.$role);
     }
 }
