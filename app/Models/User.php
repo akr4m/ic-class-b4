@@ -22,6 +22,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'provider',
+        'provider_id',
     ];
 
     /**
@@ -50,5 +52,10 @@ class User extends Authenticatable
     public function prompts(): HasMany
     {
         return $this->hasMany(Prompt::class);
+    }
+
+    public function socialProviders(): HasMany
+    {
+        return $this->hasMany(SocialProvider::class);
     }
 }

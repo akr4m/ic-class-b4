@@ -13,10 +13,11 @@
                 </div>
                 <div>
                     User Information:
-                    <ul>
+                    <ul class="list-disc list-inside px-3 py-2">
+                        <li>User ID: {{ Auth::user()->id }}</li>
                         <li>Name: {{ Auth::user()->name }}</li>
                         <li>Email: {{ Auth::user()->email }}</li>
-                        <li>Role: <string class="font-bold">{{ Auth::user()->role }}</string>
+                        <li>Role: <span class="font-bold">{{ Auth::user()->role }}</span>
                         </li>
                     </ul>
                 </div>

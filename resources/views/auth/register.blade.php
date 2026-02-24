@@ -21,9 +21,9 @@
             <x-input-label for="password" :value="__('Password')" />
 
             <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
+                type="password"
+                name="password"
+                required autocomplete="new-password" />
 
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
@@ -33,8 +33,8 @@
             <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
 
             <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
+                type="password"
+                name="password_confirmation" required autocomplete="new-password" />
 
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
         </div>
@@ -49,4 +49,19 @@
             </x-primary-button>
         </div>
     </form>
+
+    <div>
+        <p class="mt-4 text-sm text-gray-600">
+            {{ __('Or register with') }}
+        </p>
+
+        <div class="flex mt-2 space-x-4 w-full">
+            <a href="{{ route('social.redirect', ['provider' => 'github']) }}" class="px-4 w-full text-center py-2 bg-gray-800 text-white rounded-md hover:bg-gray-900">
+                {{ __('GitHub') }}
+            </a>
+            <a href="{{ route('social.redirect', ['provider' => 'facebook']) }}" class="px-4 w-full text-center py-2 bg-gray-800 text-white rounded-md hover:bg-gray-900">
+                {{ __('Facebook') }}
+            </a>
+        </div>
+    </div>
 </x-guest-layout>

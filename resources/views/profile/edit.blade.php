@@ -15,7 +15,11 @@
 
             <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                 <div class="max-w-xl">
+                    @if(auth()->user()->password)
                     @include('profile.partials.update-password-form')
+                    @else
+                    @include('profile.partials.set-password-form')
+                    @endif
                 </div>
             </div>
 

@@ -17,9 +17,9 @@
             <x-input-label for="password" :value="__('Password')" />
 
             <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
+                type="password"
+                name="password"
+                required autocomplete="current-password" />
 
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
@@ -34,9 +34,9 @@
 
         <div class="flex items-center justify-end mt-4">
             @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
-                </a>
+            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
+                {{ __('Forgot your password?') }}
+            </a>
             @endif
 
             <x-primary-button class="ms-3">
@@ -44,4 +44,18 @@
             </x-primary-button>
         </div>
     </form>
+    <div>
+        <p class="mt-4 text-sm text-gray-600">
+            {{ __('Or Login with') }}
+        </p>
+
+        <div class="flex mt-2 space-x-4 w-full">
+            <a href="{{ route('social.redirect', ['provider' => 'github']) }}" class="px-4 w-full text-center py-2 bg-gray-800 text-white rounded-md hover:bg-gray-900">
+                {{ __('GitHub') }}
+            </a>
+            <a href="{{ route('social.redirect', ['provider' => 'facebook']) }}" class="px-4 w-full text-center py-2 bg-gray-800 text-white rounded-md hover:bg-gray-900">
+                {{ __('Facebook') }}
+            </a>
+        </div>
+    </div>
 </x-guest-layout>
