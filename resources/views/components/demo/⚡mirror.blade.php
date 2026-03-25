@@ -1,11 +1,17 @@
 <?php
 // resources/views/components/demo/⚡mirror.blade.php
 
+use Illuminate\Support\Facades\Log;
 use Livewire\Component;
 
 new class extends Component
 {
     public string $name = '';
+
+    public function updated()
+    {
+        Log::info("Updated name: {$this->name}");
+    }
 };
 ?>
 

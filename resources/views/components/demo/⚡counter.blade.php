@@ -1,6 +1,7 @@
 <?php
 // resources/views/components/demo/⚡counter.blade.php
 
+use Illuminate\Support\Facades\Log;
 use Livewire\Component;
 
 new class extends Component
@@ -8,6 +9,11 @@ new class extends Component
     public int $count = 0;
 
     public string $name = 'Livewire Counter';
+
+    public function updated()
+    {
+        Log::info("Updated count: {$this->count}");
+    }
 
     public function increment(): void
     {
