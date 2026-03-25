@@ -8,3 +8,5 @@ Route::get('/', function () {
 
 Route::livewire('/demo/counter', 'demo.counter');
 Route::livewire('/demo/mirror', 'demo.mirror');
+
+Route::livewire('/products/search', 'pages::products.search');
